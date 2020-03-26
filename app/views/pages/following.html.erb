@@ -1,0 +1,16 @@
+<h1>Other users you are following!<h5>
+<% if current_user.following.count <= 0%>
+<h1> It seems pretty empty here! </h1>
+<% else %>
+<%current_user.following.each do |user|%>
+<div class ="col-lg-4">
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <img src="https://image.flaticon.com/icons/svg/1864/1864593.svg" class="card-img-top" alt="...">
+    <h5 class="card-title"><%= user.profile.name  %></h5>
+    <a href="/users/<%= user.id %>/profiles/1" class="btn btn-primary">View Profile</a>
+  </div>
+</div>
+</div>
+<% end %>
+<% end %>

@@ -1,0 +1,15 @@
+<h1>Profile</h1>
+
+<div class="row">
+<% Profile.all.each do |user| %>
+<div class ="col-lg-4">
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <img src="https://image.flaticon.com/icons/svg/1864/1864593.svg" class="card-img-top" alt="...">
+    <h5 class="card-title"><%= profile.id %></h5>
+    <a href="/users/<%= profile.id %>" class="btn btn-primary">View Profile</a>
+  </div>
+</div>
+</div>
+<% end %>
+</div>>

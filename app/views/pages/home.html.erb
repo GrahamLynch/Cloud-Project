@@ -1,0 +1,78 @@
+
+<% if @breadcrumbs && @breadcrumbs.any? %>
+<div class ='alert alert-info'>
+<% @breadcrumbs[0..0].each do |breadcrumb| %>
+  <p>Pick up where you left off!<%= link_to breadcrumb , breadcrumb %></p>
+<% end %>
+</div>
+<%end%>
+<header class="jumbotron my-4">
+      <h1 class="display-2">Welcome to eCom!</h1>
+      <p class="lead">Welcome to eCom , where you can leave reviews about clothing items!!</p>
+      <% if current_user %>
+      <%= button_to "Sign out", destroy_user_session_path, :method => :delete, class: 'btn btn-primary' %>
+      <% else %>
+      <%= button_to 'Sign up!' ,  new_user_registration_path, :method => "get", class: 'btn btn-primary' %>
+
+      <%= button_to 'Sign in!', new_user_session_path, :method => "get", class: 'btn btn-primary' %>
+      <% end %>
+    </header>
+<!-- Page Features -->
+    <div class="row text-center">
+
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100">
+          <img class="card-img-top" src="https://image.flaticon.com/icons/svg/1087/1087804.svg" alt="">
+          <div class="card-body">
+            <h4 class="card-title">View your Preferences</h4>
+            <p class="card-text">Preferences</p>
+          </div>
+          <div class="card-footer">
+            <a href="/preferences" class="btn btn-primary">View your Preferences!</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100">
+          <img class="card-img-top" src="https://image.flaticon.com/icons/svg/963/963646.svg" alt="">
+          <div class="card-body">
+            <h4 class="card-title">View Products</h4>
+            <p class="card-text">Products</p>
+          </div>
+          <div class="card-footer">
+            <a href="/products" class="btn btn-primary">View Products!</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100">
+          <img class="card-img-top" src="https://image.flaticon.com/icons/svg/2331/2331639.svg" alt="">
+          <div class="card-body">
+            <h4 class="card-title">View other Sellers</h4>
+            <p class="card-text">Sellers</p>
+          </div>
+          <div class="card-footer">
+            <a href="/profiles" class="btn btn-primary">View other Profiles!</a>
+          </div>
+        </div>
+      </div>
+      <% if current_user %>
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100">
+          <img class="card-img-top" src="https://image.flaticon.com/icons/svg/759/759097.svg" alt="">
+          <div class="card-body">
+            <h4 class="card-title">Create your Profile!</h4>
+            <p class="card-text">Create your own user profile</p>
+          </div>
+          <div class="card-footer">
+            <a href="/users/<%= current_user.id %>/profiles/new" class="btn btn-primary">Create your Profile!</a>
+          </div>
+        </div>
+      </div>
+      <% end %>
+
+
+
+    </div>
