@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-source 'C:\Users\graha\Desktop\FinalYear\CAD\CAD-Project-master\commentCheck'
+source 'lib/commentcheck-0.0.28.gem'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.5'
