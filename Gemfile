@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-source 'lib/commentcheck-0.0.28.gem'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.5'
