@@ -15,7 +15,6 @@ Rails.application.routes.draw do
   get 'preferences', to: 'products#preferences'
   get 'profiles', to: 'pages#profiles'
   get 'following', to: 'pages#following'
-  root to: 'pages#home'
   get 'search', to: 'products#search'
 
   end
