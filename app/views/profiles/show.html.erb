@@ -1,0 +1,33 @@
+<b>User Profile Page</b> <br>
+<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+<span class="badge badge-pill badge-primary">Name: <%= @profile.name if @user.profile %></span> <br>
+<span class="badge badge-pill badge-primary">Age: <%= @profile.age if @user.profile %></span>  <br>
+<span class="badge badge-pill badge-primary">Gender: <%= @profile.gender if @user.profile %></span> <br>
+<span class="badge badge-pill badge-primary">Location: <%= @profile.location if @user.profile %></span> <br>
+<span class="badge badge-pill badge-primary">Followers: <%= @user.followers.count if @user.profile %></span> <br>
+
+
+  <% if user_signed_in?%>
+  <% if current_user.following?(@user)%>
+  <%= button_to "Unfollow", relationship_path(user_id: @user.id), :method => :delete, class: 'btn btn-primary' %>
+  <% else %>
+  <%= button_to "Follow", relationships_path(user_id: @user.id) , class: 'btn btn-primary' %>
+  <% end %>
+  <% end %>
+ 
+<div class="row">
+<% @userproducts.each do |product| %>
+<div class ="col-lg-4">
+<div class="card" style="width: 13rem;">
+<img src=https://www.bestbuysoccer.com/media/catalog/product/cache/1/image/510x/602f0fa2c1f0d1ba5e241f914e856ff9/t/-/t-shirt-men-blank-cotton-tee-shirt-man-tshirts-bodybuilding-bulk-plain-chemise-white-crew-neck.jpg class="card-img-top" alt="...">
+<div class="card-body">
+<h5 class="card-title"><%= product.name %></h5>
+<p class="card-text"><%= product.description %></p>
+<p class="card-text"><%= product.user.username %></p>
+<a href="http://localhost:3000/products/<%= product.id %>"  class="btn btn-primary">View Product</a>
+</div>
+</div>
+</div>
+<% end %>
+
+</div>

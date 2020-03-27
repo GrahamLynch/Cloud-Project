@@ -1,0 +1,34 @@
+<%= form_for([@user, @profile]) do |f| %>
+<% if @user.errors.any? %>
+<div id="error_explanation">
+<h2><%= pluralize(@user.errors.count, "error")%>
+prohibited this review from being saved:</h2>
+<ul>
+<% @profile.errors.full_messages.each do |msg| %>
+<li><%= msg %></li>
+<% end %>
+</ul>
+</div>
+<% end %>
+<div class="field">
+<p>
+<%= f.label :Name %><br />
+<%= f.text_field :name %>
+</p>
+<p>
+<%= f.label :Gender %><br />
+<%= f.text_field :gender %>
+</p>
+<p>
+<%= f.label :Age %><br />
+<%= f.text_field :age %>
+</p>
+<p>
+<%= f.label :Location %><br />
+<%= f.text_field :location %>
+</p>
+</div>
+<div class="actions">
+<%= f.submit %>
+</div>
+<% end %>
