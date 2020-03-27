@@ -7,7 +7,7 @@ gem 'devise'
 
 gem 'devise-bootstrap-views'
 
-
+gem 'pg'
 gem 'commentcheck', '~> 0.0.28'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.1'
@@ -37,7 +37,6 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'postgres-pr'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
@@ -67,12 +66,3 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
-group :production do
-gem 'pg'
-gem 'rails_12factor'
-end
-
-group :development, :test do
-gem 'sqlite3'
-end
