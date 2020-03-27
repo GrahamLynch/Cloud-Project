@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'pages/home'
   devise_for :users, :controllers => {:registrations => :registrations}
-  root 'pages#home'
+  root to: 'pages#home'
 
   resources :users do
   resources :profiles
