@@ -9,8 +9,8 @@ class CommentsController < ApplicationController
     words =  CommentCheck.instance.load_file(Rails.root.join('lib/words.json'))
     review = @comment.body
     user = current_user.email
-    score = CommentCheck.instance.call(review, words)
-    @comment.score = score
+    #score = CommentCheck.instance.call(review, words)
+    #@comment.score = score
     @comment.name = current_user.email
     @comment.save
   end
