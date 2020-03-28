@@ -11,8 +11,7 @@ def show
 # Find an review in movies 1 that has id=2
 @profile = @user.profile
 @current = current_user
-
-@userproducts = Product.all.where("user_id =", "%" + params[:user_id] + "%")
+@userproducts = Product.all.where("user_id LIKE ?", "%" + params[:user_id].to_i + "%")
 @user_decorator = helpers.decorate(current_user)
 @following = @user.active_relationships
 end
